@@ -270,14 +270,14 @@ $(document).ready( function () {
         
     }
 
-    $('#strategyform').submit(function(e){
+    $('#mobileconnectform').submit(function(e){
         e.preventDefault();
 
         var errorCounter = 0;
         var counter = 0;
         var inputIds = ['#firstname_input', '#lastname_input',
                         '#email_input', '#businessname_input',
-                        '#industry_input', '#mobileno_input'];
+                        '#scmconnect_question_input', '#mobileno_input'];
 
         $.each(inputIds, function( index, target ) {
           errorCounter = emptyInputValidation(target, errorCounter, 'First Name');
@@ -285,6 +285,8 @@ $(document).ready( function () {
 
         if (errorCounter == 0) {
          $(this)[0].submit();
+        }else{
+            console.log(errorCounter);
         }
         
     });
